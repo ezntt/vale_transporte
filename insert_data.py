@@ -2,7 +2,7 @@ from datetime import date
 import mysql.connector
 from mysql.connector import errorcode
 
-conn = mysql.connector.connect(user='root', password='nero349_!A',
+conn = mysql.connector.connect(user='root', password='password',
                                host='localhost',
                                database='vale_transporte')
 
