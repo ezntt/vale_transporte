@@ -22,22 +22,23 @@ tables['Usuario'] = (
     "CREATE TABLE `Usuario` ("
     "  `id_usuario` INT(11) NOT NULL AUTO_INCREMENT,"
     "  `id_linha` VARCHAR(3) NOT NULL,"
-    "  `nome` VARCHAR(50),"
-    "  `data_nascimento` DATE,"
-    "  `cpf` VARCHAR(11),"
+    "  `nome` VARCHAR(50) NOT NULL,"
+    "  `data_nascimento` DATE NOT NULL,"
+    "  `cpf` VARCHAR(11) NOT NULL,"
     "  `email` VARCHAR(100),"
     "  `telefone` VARCHAR(11),"
     "  `rua` VARCHAR(100),"
     "  `bairro` VARCHAR(30),"
-    "  PRIMARY KEY (`id_usuario`)"
+    "  PRIMARY KEY (`id_usuario`),"
+    "  FOREIGN KEY (`id_linha`) REFERENCES Linha(`id_linha`)"
     ") ENGINE=InnoDB")
 
 tables['Cartao'] = (
     "CREATE TABLE `Cartao` ("
     "  `id_cartao` INT(11) NOT NULL AUTO_INCREMENT,"
     "  `id_usuario` INT(11) NOT NULL,"
-    "  `saldo` INT,"
-    "  `status` TINYINT,"
+    "  `saldo` FLOAT(6, 2) NOT NULL,"
+    "  `status` TINYINT NOT NULL,"
     "  `validade` DATE,"
     "  `ultima_recarga` DATE,"
     "  PRIMARY KEY (`id_cartao`),"
@@ -48,9 +49,9 @@ tables['Funcionario'] = (
     "CREATE TABLE `Funcionario` ("
     "  `id_funcionario` INT(11) NOT NULL AUTO_INCREMENT,"
     "  `nome` VARCHAR(50) NOT NULL,"
-    "  `data_nascimento` DATE,"
-    "  `salario` INT(11) NOT NULL,"
-    "  `cpf` VARCHAR(11),"
+    "  `data_nascimento` DATE NOT NULL,"
+    "  `salario` FLOAT(7, 2) NOT NULL,"
+    "  `cpf` VARCHAR(11) NOT NULL,"
     "  PRIMARY KEY (`id_funcionario`)"
     ") ENGINE=InnoDB")
 
@@ -59,8 +60,8 @@ tables['Pedido_Recarga'] = (
     "  `id_pedido` INT(11) NOT NULL AUTO_INCREMENT,"
     "  `id_cartao` INT(11) NOT NULL,"
     "  `id_funcionario` INT(11) NOT NULL,"
-    "  `valor` INT(11),"
-	"  `data` DATE,"
+    "  `valor` FLOAT(6, 2) NOT NULL,"
+	"  `data` DATE NOT NULL,"
     "  PRIMARY KEY (`id_pedido`),"
 	"  FOREIGN KEY (`id_cartao`) REFERENCES Cartao(`id_cartao`),"
     "  FOREIGN KEY (`id_funcionario`) REFERENCES Funcionario(`id_funcionario`)"
@@ -69,7 +70,7 @@ tables['Pedido_Recarga'] = (
 tables['Catraca'] = (
     "CREATE TABLE `Catraca` ("
     "  `id_catraca` INT(11) NOT NULL AUTO_INCREMENT,"
-    "  `id_linha` INT(11) NOT NULL,"
+    "  `id_linha` VARCHAR(3) NOT NULL,"
     "  `preco_tarifa` INT(11) NOT NULL,"
     "  PRIMARY KEY (`id_catraca`),"
     "  FOREIGN KEY (`id_linha`) REFERENCES Linha(`id_linha`)"
@@ -90,7 +91,7 @@ tables['Uso_Do_Cartao'] = (
 
 tables['Linha'] = (
     "CREATE TABLE `Linha` ("
-    "  `id_linha` INT(11) NOT NULL AUTO_INCREMENT,"
+    "  `id_linha` VARCHAR(3) NOT NULL,"
     "  `nome` VARCHAR(50) NOT NULL,"
     "  `primeiro_horario` TIME NOT NULL,"
     "  `ultimo_horario` TIME NOT NULL,"
@@ -100,12 +101,15 @@ tables['Linha'] = (
 cursor = conn.cursor()
 
 for table_name in tables:
+
     table_description = tables[table_name]
+
     try:
-        print("Criando tabela {}: ".format(table_name), end='')
+        print(f"Criando tabela {table_name}: ", end='')
         cursor.execute(table_description)
+
     except mysql.connector.Error as err:
-        print("ERRO! ", end='')
+        print(f"Erro: ", end='')
         if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
             print("Tabela já existe.")
         else:
