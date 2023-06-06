@@ -2,9 +2,9 @@ from datetime import date
 import mysql.connector
 from mysql.connector import errorcode
 
-conn = mysql.connector.connect(
-    user="root", password="password", host="localhost", database="vale_transporte"
-)
+conn = mysql.connector.connect(user='root', password='password',
+                              host='localhost',
+                              database='vale_transporte')
 
 if conn.is_connected():
     db_info = conn.get_server_info()
@@ -28,7 +28,6 @@ insert_user_dml = (
     "(id_linha, nome, data_nascimento, cpf, email, telefone, rua, bairro) "
     "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
 )
-
 
 def insert_employeee():
 
