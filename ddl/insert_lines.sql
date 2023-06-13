@@ -1,5 +1,5 @@
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('100', 'Madrugadao Centro', '6:00', '22:00');
+VALUES ('100', 'Madrugadao Centro', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('101', 'Centro via Hercilio Luz', '6:00', '22:00');
@@ -77,10 +77,10 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('187', 'Corrego Grande via Beira-Mar', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('200', 'Madrugadao Norte', '6:00', '22:00');
+VALUES ('200', 'Madrugadao Norte', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('300', 'Madrugadao Leste', '6:00', '22:00');
+VALUES ('300', 'Madrugadao Leste', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('330', 'Lagoa da Conceicao', '6:00', '22:00');
@@ -101,7 +101,7 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('467', 'Tapera Via Saco dos Limoes', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('604', 'Madrugadao Continente', '6:00', '22:00');
+VALUES ('604', 'Madrugadao Continente', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('630', 'Jardim Atlantico', '6:00', '22:00');
@@ -188,7 +188,7 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('311', 'Lagoa da Conceicao Direto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('200', 'Madrugadao Norte', '6:00', '22:00');
+VALUES ('200', 'Madrugadao Norte', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('250', 'Canasvieiras/Daniela via Forte', '6:00', '22:00');
