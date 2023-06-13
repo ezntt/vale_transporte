@@ -56,5 +56,3 @@ O sistema apresenta algumas limitações que devem ser consideradas:
 #### Vínculo exclusivo entre catraca e linha:
 - Uma catraca só pode estar vinculada a uma única linha de ônibus.
 - Essa associação é realizada pelo campo "`id_linha`" presente na tabela "`Catraca`".
-
-teste branch
