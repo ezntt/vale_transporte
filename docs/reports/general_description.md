@@ -1,0 +1,3 @@
+### Descrição geral do sistema de vale-transporte
+
+O objetivo principal do sistema de recarga e uso de cartão em ônibus é tornar o pagamento no transporte público mais fácil e conveniente, substituindo o dinheiro em papel por um cartão eletrônico que pode ser recarregado. O sistema foi desenvolvido para simplificar o processo de embarque, oferecendo aos usuários uma maneira segura e prática de pagar. Além disso, ele permite que a empresa de transporte colete informações precisas sobre a demanda e como os cartões são utilizados, o que ajuda no planejamento e na melhoria da experiência dos usuários.
