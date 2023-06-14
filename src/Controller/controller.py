@@ -8,7 +8,7 @@ class Controller:
 
     def Start(self):
         while True:
-            opcao = self.menu.show_options()
+            opcao = self.menu.show_options_menu()
             match opcao:
                 case "1":
                     self.crud.insert_employeee()
