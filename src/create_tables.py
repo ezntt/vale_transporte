@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 
-conn = mysql.connector.connect(user='root', password='password',
+conn = mysql.connector.connect(user='root', password='root',
                               host='localhost',
                               database='vale_transporte')
 
