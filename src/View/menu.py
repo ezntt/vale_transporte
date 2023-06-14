@@ -1,6 +1,4 @@
 class MenuView:
-    def __init__(self):
-        pass
 
     def print_data(self, message):
         print(message)
@@ -14,7 +12,7 @@ class MenuView:
 
             opcao = input("Opção: ")
 
-            if opcao == "1" or "2":
+            if opcao == "1" or opcao == "2":
                 return opcao
             elif opcao == "3":
                 break
