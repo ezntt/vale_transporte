@@ -21,7 +21,7 @@ class ControllerCrud:
             linha = self.cursor.fetchone()
             self.menu.print_data("Conectado ao banco de dados " + str(linha))
         else:
-            conn.close()
+            self.conn.close()
             self.menu.print_data("Conexão ao MySQL foi encerrada")
 
 
