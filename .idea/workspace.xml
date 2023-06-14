@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efc2eb40-c690-4bd5-b736-bf742d24f843" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/insert_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/create_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insert_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/insert_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insert_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/insert_lines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/controller_crud.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/insert_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/insert_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

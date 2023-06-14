@@ -3,9 +3,6 @@ from datetime import date
 
 class InsertMenu:
 
-    def __init__(self):
-        pass
-
     def request_user_data(self):
         num_users = int(input("Quantos usuários deseja adicionar? "))
 
