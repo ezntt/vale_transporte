@@ -1,27 +1,28 @@
 import mysql
 import mysql.connector
 from src.View.insert_menu import InsertMenu
-from src.View.menu import MenuView
-
+from src.View.view_messages import ViewMessages
 
 class ControllerCrud:
 
     insert_menu = InsertMenu()
-    menu = MenuView()
+    message = ViewMessages()
     def __init__(self):
-        conn = mysql.connector.connect(user='root', password='root',
+        self.conn = mysql.connector.connect(user='root', password='root',
                                        host='localhost',
                                        database='vale_transporte')
-        if conn.is_connected():
-            db_info = conn.get_server_info()
-            self.menu.print_data("Conectado ao servidor MySQL versão " + str(db_info))
-            cursor = conn.cursor()
-            cursor.execute("SELECT DATABASE();")
-            linha = cursor.fetchone()
-            self.menu.print_data("Conectado ao banco de dados " + str(linha))
+        self.cursor = None
+        if self.conn.is_connected():
+            db_info = self.conn.get_server_info()
+            self.message.print_data("Conectado ao servidor MySQL versão " + str(db_info))
+            self.cursor = self.conn.cursor()
+            self.cursor.execute("SELECT DATABASE();")
+            linha = self.cursor.fetchone()
+            self.message.print_data("Conectado ao banco de dados " + str(linha))
         else:
-            conn.close()
-            self.menu.print_data("Conexão ao MySQL foi encerrada")
+            self.conn.close()
+            self.message.print_data("Conexão ao MySQL foi encerrada")
+
 
     insert_employee_dml = (
         "INSERT INTO Funcionario "

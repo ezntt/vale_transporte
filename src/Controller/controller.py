@@ -6,14 +6,11 @@ class Controller:
     crud = ControllerCrud()
     menu = MenuView()
 
-    def __init__(self):
-        pass
-
     def Start(self):
         while True:
-            opcao = self.menu.show_options()
+            opcao = self.menu.show_options_menu()
             match opcao:
-                case 1:
+                case "1":
                     self.crud.insert_employeee()
-                case 2:
+                case "2":
                     self.crud.insert_user()
