@@ -9,7 +9,7 @@ class ControllerCrud:
     message = ViewMessages()
 
     def __init__(self):
-        self.conn = mysql.connector.connect(user='root', password='password',
+        self.conn = mysql.connector.connect(user='root', password='root',
                                             host='localhost',
                                             database='vale_transporte')
         self.cursor = None

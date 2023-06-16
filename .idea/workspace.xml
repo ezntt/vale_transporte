@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efc2eb40-c690-4bd5-b736-bf742d24f843" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/controller_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/controller_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/insert_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/insert_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/create_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insert_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/insert_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/insert_lines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +63,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\pmati\PycharmProjects\bancodedados\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -121,8 +113,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/vale_transporte$main.coverage" NAME="main Coverage Results" MODIFIED="1686874326130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
