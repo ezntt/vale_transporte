@@ -1,91 +1,95 @@
+import datetime
 from datetime import date
 
 
 class InsertMenu:
 
-    def request_user_data(self):
-        num_users = int(input("Quantos usuários deseja adicionar? "))
+    def validate_input(self, input_message, validation, error_message):
+        while True:
+            try:
+                user_input = int(input(input_message))
+                if validation(user_input):
+                    raise ValueError(error_message)
+                return user_input
+            except ValueError as err:
+                print("Erro:", err)
 
+    def validate_year_of_birth(self, year):
+        current_year = datetime.date.today().year
+        return year > current_year - 18
+
+    def validate_month_of_birth(self, month):
+        return month < 1 or month > 12
+
+    def validate_day_of_birth(self, day):
+        return day < 1 or day > 31
+
+    def validate_cpf(self, cpf):
+        if len(str(cpf)) != 11:
+            return False
+        return True
+
+    def request_user_data(self):
         many_data_user = []
 
-        for _ in range(num_users):
-            id_linha = int(input("Digite o ID da linha: "))
+        while True:
+
             name = input("Digite o nome do usuário: ")
-            year_of_birth = int(input("Digite o ano de nascimento do usuário: "))
 
-            while True:
-                try:
-                    month_of_birth = int(input("Digite o mês de nascimento do usuário: "))
-                    if month_of_birth < 1 or month_of_birth > 12:
-                        raise ValueError("Mês inválido. Digite um valor entre 1 e 12.")
-                    break
-                except ValueError as e:
-                    print("Erro:", e)
+            # todo: verificar se a linha existe, caso não exista, informe e solicite o ID denovo
+            line_id = int(input("Digite o ID da linha: "))
 
-            while True:
-                try:
-                    day_of_birth = int(input("Digite o dia de nascimento do usuário: "))
-                    if day_of_birth < 1 or day_of_birth > 31:
-                        raise ValueError("Dia inválido. Digite um valor entre 1 e 31.")
-                    break
-                except ValueError as e:
-                    print("Erro:", e)
+            day_of_birth = self.validate_input("Digite o dia de nascimento do usuário: ",
+                                               self.validate_day_of_birth,
+                                               "Dia inválido. Deve ser entre 1 e 31.")
+
+            month_of_birth = self.validate_input("Digite o mês de nascimento do usuário: ",
+                                                 self.validate_month_of_birth,
+                                                 "Mês inválido. Deve ser entre 1 e 12.")
+
+            year_of_birth = self.validate_input("Digite o ano de nascimento do usuário: ",
+                                                self.validate_year_of_birth,
+                                                "Ano inválido. Deve ter mais de 18 anos.")
 
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
-            while True:
-                try:
-                    cpf = input("Digite o CPF do usuário: ")
-
-                    if len(cpf) != 11:
-                        raise ValueError("CPF inválido. Deve ter 11 caracteres.")
-
-                    break
-                except ValueError as e:
-                    print("Erro:", e)
+            cpf = self.validate_input("Digite o CPF do usuário: ",
+                                      self.validate_cpf,
+                                      "CPF inválido. Deve ter 11 caracteres.")
 
             email = input("Digite o email do usuário: ")
             telefone = input("Digite o telefone do usuário: ")
             rua = input("Digite a rua do usuário: ")
             bairro = input("Digite o bairro do usuário: ")
 
-            many_data_user.append((id_linha, name, birthday, cpf, email, telefone, rua, bairro))
+            many_data_user.append((line_id, name, birthday, cpf, email, telefone, rua, bairro))
+
+            add_another = input("Deseja adicionar outro usuário? (S/N): ")
+            if add_another.upper() != "S":
+                break
 
         return many_data_user
 
-
     def request_employee_data(self):
-        num_employees = int(input("Quantos funcionários deseja adicionar? "))
-
         many_data_employee = []
 
-        for _ in range(num_employees):
+        while True:
 
             name = input("Digite o nome do funcionário: ")
-            year_of_birth = int(input("Digite o ano de nascimento do funcionário: "))
 
-            while True:
+            day_of_birth = self.validate_input("Digite o dia de nascimento do funcionário: ",
+                                               self.validate_day_of_birth,
+                                               "Dia inválido. Deve ser entre 1 e 31.")
 
-                try:
-                    month_of_birth = int(input("Digite o mês de nascimento do funcionário: "))
-                    if month_of_birth < 1 or month_of_birth > 12:
-                        raise ValueError("Mês inválido. Digite um valor entre 1 e 12.")
+            month_of_birth = self.validate_input("Digite o mês de nascimento do funcionário: ",
+                                                 self.validate_month_of_birth,
+                                                 "Mês inválido. Deve ser entre 1 e 12.")
 
-                    break
+            year_of_birth = self.validate_input("Digite o ano de nascimento do usuárifuncionário: ",
+                                                self.validate_year_of_birth,
+                                                "Ano inválido. Funcionário deve ter mais de 18 anos.")
 
-                except ValueError as e:
-                    print("Erro:", e)
-
-            while True:
-
-                try:
-                    day_of_birth = int(input("Digite o dia de nascimento do funcionário: "))
-                    if day_of_birth < 1 or day_of_birth > 31:
-                        raise ValueError("Dia inválido. Digite um valor entre 1 e 31.")
-                    break
-
-                except ValueError as e:
-                    print("Erro:", e)
+            birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
@@ -110,3 +114,24 @@ class InsertMenu:
 
             many_data_employee.append((name, birthday, cpf, salario))
             return many_data_employee
+
+    def request_line_data(self):
+        many_data_line = []
+
+        while True:
+
+            # todo: verificar se a linha existe, caso exista, informe e solicite o ID denovo
+            line_id = int(input("Digite o ID da linha: "))
+
+            name = input("Digite o nome da linha: ")
+
+            first_hour = input(f"Digite o primeiro horário de atividade da linha {line_id} (hh:mm): ")
+            last_hour = input(f"Digite o último horário de atividade da linha {line_id} (hh:mm): ")
+
+            many_data_line.append((line_id, name, first_hour, last_hour))
+
+            add_another = input("Deseja adicionar outra linha? (S/N): ")
+            if add_another.upper() != "S":
+                break
+
+        return many_data_line

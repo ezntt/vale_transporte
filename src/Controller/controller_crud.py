@@ -3,14 +3,15 @@ import mysql.connector
 from src.View.insert_menu import InsertMenu
 from src.View.view_messages import ViewMessages
 
-class ControllerCrud:
 
+class ControllerCrud:
     insert_menu = InsertMenu()
     message = ViewMessages()
+
     def __init__(self):
-        self.conn = mysql.connector.connect(user='root', password='root',
-                                       host='localhost',
-                                       database='vale_transporte')
+        self.conn = mysql.connector.connect(user='root', password='password',
+                                            host='localhost',
+                                            database='vale_transporte')
         self.cursor = None
         if self.conn.is_connected():
             db_info = self.conn.get_server_info()
@@ -23,26 +24,44 @@ class ControllerCrud:
             self.conn.close()
             self.message.print_data("Conexão ao MySQL foi encerrada")
 
+    insertions = {
+        'employee': (
+            "INSERT INTO Funcionario"
+            "(nome, data_nascimento, cpf, salario)"
+            "VALUES (%s, %s, %s, %s)"
+        ),
+        'user': (
+            "INSERT INTO Usuario"
+            "(id_linha, nome, data_nascimento, cpf, email, telefone, rua, bairro)"
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        ),
+        'line': (
+            "INSERT INTO Linha"
+            "(id_linha, nome, primeiro_horario, ultimo_horario)"
+            "VALUES (%s, %s, %s, %s)"
+        ),
+        'card': (
+            "INSERT INTO Cartao"
+            "(id_usuario, saldo, status, validade, ultima_recarga)"
+            "VALUES (%s, %s, %s, %s, %s)"
+        )}
 
-    insert_employee_dml = (
-        "INSERT INTO Funcionario "
-        "(nome, data_nascimento, cpf, salario) "
-        "VALUES (%s, %s, %s, %s)"
-    )
-
-    insert_user_dml = (
-        "INSERT INTO Usuario "
-        "(id_linha, nome, data_nascimento, cpf, email, telefone, rua, bairro) "
-        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    )
-
-
-    def insert_employeee(self):
+    def insert_employee(self):
         many_data_employee = self.insert_menu.request_employee_data()
-        self.cursor.executemany(self.insert_employee_dml, many_data_employee)
+        self.cursor.executemany(self.insertions['employee'], many_data_employee)
         self.conn.commit()
 
     def insert_user(self):
         many_data_user = self.insert_menu.request_user_data()
-        self.cursor.executemany(self.insert_user_dml, many_data_user)
+        self.cursor.executemany(self.insertions['user'], many_data_user)
+        self.conn.commit()
+
+    def insert_line(self):
+        many_data_line = self.insert_menu.request_line_data()
+        self.cursor.executemany(self.insertions['line'], many_data_line)
+        self.conn.commit()
+
+    def insert_card(self):
+        many_data_card = self.insert_menu.request_card_data()
+        self.cursor.executemany(self.insertions['card'], many_data_card)
         self.conn.commit()
