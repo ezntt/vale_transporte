@@ -1,8 +1,12 @@
 import datetime
 from datetime import date
 
+from src.model.db_connection import DBConnection
+
 
 class InsertMenu:
+
+    # validations
 
     def validate_input(self, input_message, validation, error_message):
         while True:
@@ -24,58 +28,53 @@ class InsertMenu:
     def validate_day_of_birth(self, day):
         return day < 1 or day > 31
 
-    def validate_cpf(self, cpf):
-        if len(str(cpf)) != 11:
-            return False
-        return True
+    # requests
 
     def request_user_data(self):
-        many_data_user = []
+        user_data = []
 
         while True:
 
-            name = input("Digite o nome do usuário: ")
+            name = input("Digite o primeiro nome do usuário: ")
+            surname = input("Digite o sobrenome do usuário")
+            full_name = f"{name} {surname}"
 
             # todo: verificar se a linha existe, caso não exista, informe e solicite o ID denovo
             line_id = int(input("Digite o ID da linha: "))
 
-            day_of_birth = self.validate_input("Digite o dia de nascimento do usuário: ",
+            day_of_birth = self.validate_input(f"Digite o dia de nascimento do usuário {name}: ",
                                                self.validate_day_of_birth,
                                                "Dia inválido. Deve ser entre 1 e 31.")
-
-            month_of_birth = self.validate_input("Digite o mês de nascimento do usuário: ",
+            month_of_birth = self.validate_input(f"Digite o mês de nascimento do usuário {name}: ",
                                                  self.validate_month_of_birth,
                                                  "Mês inválido. Deve ser entre 1 e 12.")
-
-            year_of_birth = self.validate_input("Digite o ano de nascimento do usuário: ",
+            year_of_birth = self.validate_input(f"Digite o ano de nascimento do usuário {name}: ",
                                                 self.validate_year_of_birth,
-                                                "Ano inválido. Deve ter mais de 18 anos.")
-
+                                                f"Ano inválido. {name} deve ter mais de 18 anos.")
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
-            cpf = self.validate_input("Digite o CPF do usuário: ",
-                                      self.validate_cpf,
-                                      "CPF inválido. Deve ter 11 caracteres.")
+            cpf = input("Digite o CPF do usuário: ")
 
-            email = input("Digite o email do usuário: ")
-            telefone = input("Digite o telefone do usuário: ")
-            rua = input("Digite a rua do usuário: ")
-            bairro = input("Digite o bairro do usuário: ")
+            email = input(f"Digite o email do usuário {name}: ")
+            telefone = input(f"Digite o telefone do usuário {name}: ")
+            bairro = input(f"Digite o bairro onde {name} reside: ")
 
-            many_data_user.append((line_id, name, birthday, cpf, email, telefone, rua, bairro))
+            user_data.append((line_id, full_name, birthday, cpf, email, telefone, bairro))
 
             add_another = input("Deseja adicionar outro usuário? (S/N): ")
             if add_another.upper() != "S":
                 break
 
-        return many_data_user
+        return user_data
 
     def request_employee_data(self):
-        many_data_employee = []
+        employee_data = []
 
         while True:
 
-            name = input("Digite o nome do funcionário: ")
+            name = input("Digite o primeiro nome do funcionário: ")
+            surname = input("Digite o sobrenome do funcionário")
+            full_name = f"{name} {surname}"
 
             day_of_birth = self.validate_input("Digite o dia de nascimento do funcionário: ",
                                                self.validate_day_of_birth,
@@ -91,32 +90,20 @@ class InsertMenu:
 
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
-            birthday = date(year_of_birth, month_of_birth, day_of_birth)
+            cpf = input("Digite o CPF do funcionário: ")
 
             while True:
                 try:
-                    cpf = input("Digite o CPF do funcionário: ")
-
-                    if len(cpf) != 11:
-                        raise ValueError("CPF inválido. Deve ter 11 caracteres.")
-
-                    break
-
-                except ValueError as e:
-                    print("Erro: ", e)
-
-            while True:
-                try:
-                    salario = float(input("Digite o salário do funcionário: "))
+                    salary = float(input("Digite o salário do funcionário: "))
                     break
                 except ValueError:
                     print("Salário inválido. Digite um valor numérico.")
 
-            many_data_employee.append((name, birthday, cpf, salario))
-            return many_data_employee
+            employee_data.append((full_name, birthday, cpf, salary))
+            return employee_data
 
     def request_line_data(self):
-        many_data_line = []
+        line_data = []
 
         while True:
 
@@ -128,10 +115,20 @@ class InsertMenu:
             first_hour = input(f"Digite o primeiro horário de atividade da linha {line_id} (hh:mm): ")
             last_hour = input(f"Digite o último horário de atividade da linha {line_id} (hh:mm): ")
 
-            many_data_line.append((line_id, name, first_hour, last_hour))
+            line_data.append((line_id, name, first_hour, last_hour))
 
             add_another = input("Deseja adicionar outra linha? (S/N): ")
             if add_another.upper() != "S":
                 break
 
-        return many_data_line
+        return line_data
+
+    def request_card_data(self):
+
+        card_data = []
+
+        user_id = input("Digite o ID do usuário que possuirá o cartão")
+
+        balance = input("Digite o saldo do cartãod")
+
+        # todo: terminar, so estou dando push para atualizar
