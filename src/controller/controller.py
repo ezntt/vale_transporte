@@ -1,5 +1,5 @@
-from src.Controller.controller_crud import ControllerCrud
-from src.View.menu import MenuView
+from src.controller.controller_crud import ControllerCrud
+from src.view.menu import MenuView
 
 
 class Controller:

@@ -1,4 +1,4 @@
-from src.Controller.controller_crud import ControllerCrud
+from src.controller.controller_crud import ControllerCrud
 
 
 class MenuView:
