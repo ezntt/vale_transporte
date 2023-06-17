@@ -15,7 +15,7 @@ else:
     conn.close()
     print("Conexão ao MySQL foi encerrada")
 
-file_path = "../ddl/insert_lines.sql"
+file_path = "../sql/insert_lines.sql"
 
 with open(file_path, 'r') as ddl_file:
     statements = ddl_file.read().split(';')

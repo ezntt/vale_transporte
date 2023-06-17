@@ -1,7 +1,6 @@
-import mysql
-import mysql.connector
-from src.View.insert_menu import InsertMenu
-from src.View.view_messages import ViewMessages
+from src.model.db_connection import DBConnection
+from src.view.insert_menu import InsertMenu
+from src.view.view_messages import ViewMessages
 
 
 class ControllerCrud:
@@ -9,20 +8,9 @@ class ControllerCrud:
     message = ViewMessages()
 
     def __init__(self):
-        self.conn = mysql.connector.connect(user='root', password='root',
-                                            host='localhost',
-                                            database='vale_transporte')
         self.cursor = None
-        if self.conn.is_connected():
-            db_info = self.conn.get_server_info()
-            self.message.print_data("Conectado ao servidor MySQL versão " + str(db_info))
-            self.cursor = self.conn.cursor()
-            self.cursor.execute("SELECT DATABASE();")
-            linha = self.cursor.fetchone()
-            self.message.print_data("Conectado ao banco de dados " + str(linha))
-        else:
-            self.conn.close()
-            self.message.print_data("Conexão ao MySQL foi encerrada")
+        self.db_connection = DBConnection()
+        self.conn = self.db_connection.connect()
 
     insertions = {
         'employee': (
@@ -48,20 +36,18 @@ class ControllerCrud:
 
     def insert_employee(self):
         many_data_employee = self.insert_menu.request_employee_data()
+        self.cursor = self.conn.cursor()
         self.cursor.executemany(self.insertions['employee'], many_data_employee)
         self.conn.commit()
 
     def insert_user(self):
         many_data_user = self.insert_menu.request_user_data()
+        self.cursor = self.conn.cursor()
         self.cursor.executemany(self.insertions['user'], many_data_user)
         self.conn.commit()
 
     def insert_line(self):
         many_data_line = self.insert_menu.request_line_data()
+        self.cursor = self.conn.cursor()
         self.cursor.executemany(self.insertions['line'], many_data_line)
-        self.conn.commit()
-
-    def insert_card(self):
-        many_data_card = self.insert_menu.request_card_data()
-        self.cursor.executemany(self.insertions['card'], many_data_card)
         self.conn.commit()
