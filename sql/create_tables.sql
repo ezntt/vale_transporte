@@ -14,7 +14,6 @@ CREATE TABLE Usuario (
   cpf VARCHAR(11) NOT NULL,
   email VARCHAR(100),
   telefone VARCHAR(11),
-  rua VARCHAR(100),
   bairro VARCHAR(30),
   PRIMARY KEY (id_usuario),
   FOREIGN KEY (id_linha) REFERENCES Linha(id_linha)
