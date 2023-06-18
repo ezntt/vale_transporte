@@ -2,7 +2,7 @@ from datetime import date
 from src.view.validations_view import ValidationsView
 
 
-class EmployeeMenu:
+class UserMenu:
 
     def __init__(self):
         self.validations = ValidationsView()
@@ -13,48 +13,53 @@ class EmployeeMenu:
 
         while True:
 
-            name = input("Digite o primeiro nome do funcionário: ")
-            surname = input("Digite o sobrenome do funcionário: ")
+            name = input("Digite o primeiro nome do usuário: ")
+            surname = input("Digite o sobrenome do usuário")
             full_name = f"{name} {surname}"
 
+            # todo: verificar se a linha existe, caso não exista, informe e solicite o ID denovo
+            line_id = int(input("Digite o ID da linha: "))
+
             day_of_birth = self.validations.validate_input(
-                f"Digite o dia de nascimento do funcionário {name}: ",
+                f"Digite o dia de nascimento do usuário {name}: ",
                 self.validations.validate_day,
                 "Dia inválido. Deve ser entre 1 e 31.",
                 is_int=True
             )
 
             month_of_birth = self.validations.validate_input(
-                f"Digite o mês de nascimento do funcionário {name}: ",
+                f"Digite o mês de nascimento do usuário {name}: ",
                 self.validations.validate_month,
                 "Mês inválido. Deve ser entre 1 e 12.",
                 is_int=True
             )
 
             year_of_birth = self.validations.validate_input(
-                f"Digite o ano de nascimento do funcionário {name}: ",
+                f"Digite o ano de nascimento do usuário {name}: ",
                 self.validations.validate_year_of_birth,
-                "Ano inválido. Funcionário deve ter mais de 18 anos.",
+                f"Ano inválido. {name} deve ter mais de 18 anos.",
                 is_int=True
             )
 
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
             cpf = self.validations.validate_input(
-                f"Digite o CPF do funcionário {name}",
+                f"Digite o CPF do usuário {name}",
                 self.validations.validate_cpf,
                 "CPF inválido, deve ter 11 caracteres."
             )
 
-            salary = self.validations.validate_input(
-                f"Digite o salário do funcionário {name}",
-                self.validations.validate_float,
-                "Salário inválido"
-            )
+            email = input(f"Digite o email do usuário {name}: ")
+            telefone = input(f"Digite o telefone do usuário {name}: ")
+            bairro = input(f"Digite o bairro onde {name} reside: ")
 
-            data.append((full_name, birthday, cpf, salary))
+            data.append((line_id, full_name, birthday, cpf, email, telefone, bairro))
 
-            return data
+            add_another = input("Deseja adicionar outro usuário? (S/N): ")
+            if add_another.upper() != "S":
+                break
+
+        return data
 
     # todo
     def request_delete_data(self):

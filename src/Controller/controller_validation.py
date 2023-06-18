@@ -1,6 +1,6 @@
 from src.model.db_connection import DBConnection
 from src.model.sql_scripts import SQLScripts
-from src.view.view_messages import ViewMessages
+from src.view.messages_view import ViewMessages
 
 
 class ControllerValidations:
