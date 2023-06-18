@@ -131,7 +131,6 @@ INSERT INTO Uso_do_cartao (id_uso_cartao, id_catraca, id_cartao, data, hora)
 VALUES ('143', '613', '405', '2021-09-01', '11:30');
 
 INSERT INTO Uso_do_cartao (id_uso_cartao, id_catraca, id_cartao, data, hora)
-INSERT INTO Uso_do_cartao (id_uso_cartao, id_catraca, id_cartao, data, hora)
 VALUES ('144', '614', '401', '2023-04-12', '5:45');
 
 INSERT INTO Uso_do_cartao (id_uso_cartao, id_catraca, id_cartao, data, hora)

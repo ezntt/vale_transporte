@@ -20,7 +20,7 @@ cursor = conn.cursor()
 
 tables = {}
 
-file_path = "../ddl/create_tables.sql"
+file_path = "../sql/create_tables.sql"
 
 with open(file_path, 'r') as ddl_file:
     statements = ddl_file.read().split(';')

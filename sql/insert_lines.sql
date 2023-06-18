@@ -38,9 +38,6 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('138', 'Volta ao Morro Pantanal Sul', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('154', 'Ufsc Semidireto - Saida Sul', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('160', 'Morro da Cruz', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
@@ -53,25 +50,7 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('183', 'Corredor Sudoeste', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('184', 'Udesc Semidireto', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('185', 'Ufsc Semidireto', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('153', 'Costeira do Pirajubae', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('161', 'Morro da Penitenciaria', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('162', 'Saco dos Limoes', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('184', 'Corredor Sudoeste', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('185', 'Corredor Sudoeste Semidireto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('187', 'Corrego Grande via Beira-Mar', '6:00', '22:00');
@@ -155,16 +134,10 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('151', 'Centro Administrativo SC Semidireto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('154', 'UFSC Semidireto - Saida Sul', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('184', 'UDESC Semidireto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('185', 'UFSC Semidireto', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('200', 'Canasvieiras Via Agronomica', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('221', 'Canasvieiras Via Mauro Ramos', '6:00', '22:00');
@@ -179,16 +152,13 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('210', 'Canasvieiras Direto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('213', 'Santo Antonio Direto', '6:00', '22:00');
+VALUES ('212', 'Santo Antonio Direto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('310', 'Santo Antonio Direto', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('311', 'Lagoa da Conceicao Direto', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('200', 'Madrugadao Norte', '2:00', '4:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('250', 'Canasvieiras/Daniela via Forte', '6:00', '22:00');
@@ -254,9 +224,6 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('941', 'Canasvieiras/ S. Antonio via Ratones', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('250', 'Canasvieiras/Forte', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('840', 'Canasvieiras via Lagoa da Conceicao', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
@@ -266,19 +233,4 @@ INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('230', 'Canasvieiras via Gama DEca', '6:00', '22:00');
 
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('231', 'Canasvieiras via Mauro Ramos', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('233', 'Canasvieiras/Trindade', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('211', 'Canasvieiras Trindade', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('221', 'Canasvieiras Via Mauro Ramos', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('210', 'Canasvieiras Direto', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('212', 'Canasvieiras/Trindade - Direto', '6:00', '22:00');
+VALUES ('211', 'Canasvieiras/Trindade - Direto', '6:00', '22:00');

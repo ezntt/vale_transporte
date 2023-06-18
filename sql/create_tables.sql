@@ -14,7 +14,6 @@ CREATE TABLE Usuario (
   cpf VARCHAR(11) NOT NULL,
   email VARCHAR(100),
   telefone VARCHAR(11),
-  rua VARCHAR(100),
   bairro VARCHAR(30),
   PRIMARY KEY (id_usuario),
   FOREIGN KEY (id_linha) REFERENCES Linha(id_linha)
@@ -65,7 +64,6 @@ CREATE TABLE Uso_Do_Cartao (
   id_cartao INT(11) NOT NULL,
   data DATE NOT NULL,
   hora TIME NOT NULL,
-  local VARCHAR(50) NOT NULL,
   PRIMARY KEY (id_uso_cartao),
   FOREIGN KEY (id_cartao) REFERENCES Cartao(id_cartao),
   FOREIGN KEY (id_catraca) REFERENCES Catraca(id_catraca)

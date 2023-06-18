@@ -11,11 +11,11 @@
 - ~~Inclusão de script DML com cadastro de dados para teste. Os dados não devem conter a palavra testes.
    Deve-se incluir informações reais e precisas do que está sendo modelado.~~ (0,5 ponto)
 	- ~~DML de Linha~~
-	- DML de Usuario
-	- DML de Funcionario
-	- DML de Catraca
-	- DML de Uso_Do_Cartao ?
-	- DML de Pedido_Recarga ?
+	- ~~DML de Usuario~~
+	- ~~DML de Funcionario~~
+	- ~~DML de Catraca~~
+	- ~~DML de Uso_Do_Cartao~~
+	- ~~DML de Pedido_Recarga~~
 
 - Elaboração e apresentação de 3 (três) consultas que sumarizem as informações do banco de dados envolvendo mais de duas tabelas. (1,0 pontos)
 	- Cada consulta deve projetar pelo menos duas colunas.
@@ -29,7 +29,7 @@
 		 
 - Desenvolvimento de uma aplicação que (4,0 pontos):
 
-	- Se conecte a um Banco de Dados (PostgreSQL ou MySQL) (0,5 ponto);
+	- ~~Se conecte a um Banco de Dados (PostgreSQL ou MySQL) (0,5 ponto);~~
 	
 	- Faça inserções, atualizações e exclusões no Banco de Dados (2,5 pontos).
 

@@ -13,7 +13,6 @@ VALUES ('103', '400', '100', '03.50', '2023-03-06');
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('104', '400', '110', '22.75', '2023-03-26');
 
-
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('105', '401', '111', '22.75', '2021-12-25');
 
@@ -25,7 +24,6 @@ VALUES ('107', '401', '112', '12.75', '2021-10-05');
 
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('108', '401', '100', '2.75', '2021-09-03');
-
 
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('109', '402', '115', '2.75', '2021-09-17');
@@ -39,10 +37,8 @@ VALUES ('111', '402', '103', '122.75', '2021-07-13');
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('112', '402', '102', '10.00', '2021-03-27');
 
-
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('113', '403', '105', '255.50', '2022-03-11');
-
 
 INSERT INTO Pedido_recarga (id_pedido, id_cartao, id_funcionario, valor, data)
 VALUES ('114', '404', '106', '15.50', '2022-08-31');
