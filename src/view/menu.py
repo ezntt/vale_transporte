@@ -20,6 +20,7 @@ class MenuView:
                 case "2":
                     self.show_option_crud_user()
                 case "3":
+                    # todo: menu consultas
                     print("todo")
                 case "4":
                     exit()

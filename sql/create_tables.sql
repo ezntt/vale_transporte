@@ -65,7 +65,6 @@ CREATE TABLE Uso_Do_Cartao (
   id_cartao INT(11) NOT NULL,
   data DATE NOT NULL,
   hora TIME NOT NULL,
-  local VARCHAR(50) NOT NULL,
   PRIMARY KEY (id_uso_cartao),
   FOREIGN KEY (id_cartao) REFERENCES Cartao(id_cartao),
   FOREIGN KEY (id_catraca) REFERENCES Catraca(id_catraca)

@@ -1,3 +1,5 @@
+# linhas de ônibus
+
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('100', 'Madrugadao Centro', '2:00', '4:00');
 
@@ -154,83 +156,58 @@ VALUES ('210', 'Canasvieiras Direto', '6:00', '22:00');
 INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
 VALUES ('212', 'Santo Antonio Direto', '6:00', '22:00');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('310', 'Santo Antonio Direto', '6:00', '22:00');
+#
+#   funcionários
+#
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('311', 'Lagoa da Conceicao Direto', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('100', 'Emílio Quintana de Rodrigues', '2001-10-12', '1441.00', '26528195188');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('250', 'Canasvieiras/Daniela via Forte', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('101', 'Christian Cordeiro', '1984-05-25', '1641.0', '25477872616');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('260', 'Cachoeira do Bom Jesus', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('102', 'Sofia Camacho Matias', '1977-12-10', '1641.10', '75004509409');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('261', 'Capivari (via Graciliano Gomes)', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('103', 'Adriano Emanoel Dias Rico', '1952-02-15', '1241.01', '14257129247');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('262', 'Circular Canasvieiras', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('104', 'Érica Franco Perez', '1982-04-21', '1421.20', '43590385340');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('263', 'Gaivotas', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('105', 'Beatriz Keyla de Campos', '1990-12-29', '1754.90', '54065169305');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('264', 'Ingleses', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('106', 'Marciane Renata Chaves do Amazonas', '1967-09-11', '2970.54', '54354314681');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('265', 'Ponta das Canas', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('107', 'Nicolas Tomáz Dominato', '1955-10-28', '2270.54', '16913466404');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('266', 'Praia Brava', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('108', 'Camilo Vicente Correia Galvão Moreno', '1987-06-29', '983.34', '86203948276');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('267', 'Rio Vermelho', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('109', 'Kiara Aragão', '1934-02-18', '11243.11', '38747814535');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('268', 'Sitio de Baixo', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('110', 'Estêvão Beltrão de Muniz', '1976-09-12', '6835.83', '70301721246');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('269', 'Travessao', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('111', 'Regina Gislaine Beltrão Soto', '2002-09-12', '1534.12', '42569313840');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('270', 'Vargem Grande', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('112', 'Catarina Samara Duarte de Albuquerque', '1957-03-06', '1325.20', '92260332340');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('274', 'Rio Vermelho Via Muquem', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('113', 'Emílio Ávila da Cunha', '2003-07-05', '5346.87', '08236456900');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('275', 'Capivari (via Joao Gualberto Soares)', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('114', 'Táles Wagner Chaves', '1986-02-20', '2376.21', '51513684272');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('276', 'Balneario Canasvieiras (linha sazonal - opera no verao)', '6:00', '22:00');
+INSERT INTO Funcionario (id_funcionario, nome, data_nascimento, salario, cpf)
+VALUES ('115', 'Rebeca Faro', '1973-01-18', '1278.23', '47665326439');
 
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('277', 'Balneario Ingleses', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('281', 'Costa do Mocambique', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('283', 'Vargem do Bom Jesus', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('842', 'Canasvieiras/Lagoa', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('940', 'Canasvieiras/ S. Antonio via Jurere', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('941', 'Canasvieiras/ S. Antonio via Ratones', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('840', 'Canasvieiras via Lagoa da Conceicao', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('294', 'Interpraias (Inicio: Santinho - Final: Forte)', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('230', 'Canasvieiras via Gama DEca', '6:00', '22:00');
-
-INSERT INTO Linha (id_linha, nome, primeiro_horario, ultimo_horario)
-VALUES ('211', 'Canasvieiras/Trindade - Direto', '6:00', '22:00');
+#
+#
+#

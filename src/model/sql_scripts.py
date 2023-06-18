@@ -20,6 +20,10 @@ class SQLScripts:
         'select': (
             "SELECT * FROM Funcionario "
             "WHERE id_funcionario = %s"
+        ),
+        'select': (
+            "SELECT * FROM Funcionario "
+            "WHERE id_funcionario = %s"
         )
     }
 
@@ -36,6 +40,10 @@ class SQLScripts:
         'update': (
             "UPDATE Usuario "
             "SET nome = %s, data_nascimento = %s, cpf = %s, email = %s, telefone = %s, bairro = %s "
+            "WHERE id_usuario = %s"
+        ),
+        'select': (
+            "SELECT * FROM Usuario "
             "WHERE id_usuario = %s"
         )
     }
@@ -54,6 +62,10 @@ class SQLScripts:
             "UPDATE Linha "
             "SET nome = %s, primeiro_horario = %s, ultimo_horario = %s "
             "WHERE id_linha = %s"
+        ),
+        'select': (
+            "SELECT * FROM Linha "
+            "WHERE id_linha = %s"
         )
     }
 
@@ -70,6 +82,10 @@ class SQLScripts:
         'update': (
             "UPDATE Cartao "
             "SET id_usuario = %s, saldo = %s, status = %s, validade = %s, ultima_recarga = %s "
+            "WHERE id_cartao = %s"
+        ),
+        'select': (
+            "SELECT * FROM Cartao "
             "WHERE id_cartao = %s"
         )
     }
