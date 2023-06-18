@@ -1,6 +1,7 @@
 import datetime
 import re
 
+
 class ValidationsView:
     def validate_input(self, input_message, validation, error_message, is_int=False):
         while True:
@@ -28,7 +29,6 @@ class ValidationsView:
     def validate_float(self, number):
         return not float(number)
 
-    # todo
     def validate_time(self, time):
         time_pattern = re.compile(r'^([01]\d|2[0-3]):([0-5]\d)$')
         return not bool(time_pattern.match(time))

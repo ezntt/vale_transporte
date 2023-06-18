@@ -20,10 +20,6 @@ class SQLScripts:
         'select': (
             "SELECT * FROM Funcionario "
             "WHERE id_funcionario = %s"
-        ),
-        'select': (
-            "SELECT * FROM Funcionario "
-            "WHERE id_funcionario = %s"
         )
     }
 
