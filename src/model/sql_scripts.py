@@ -86,6 +86,27 @@ class SQLScripts:
         )
     }
 
+    gate = {
+        'insert': (
+            "INSERT INTO Catraca "
+            "(id_linha, preco_tarifa) "
+            "VALUES (%s, %s)"
+        ),
+        'delete': (
+            "DELETE FROM Catraca "
+            "WHERE id_catraca = %s"
+        ),
+        'update': (
+            "UPDATE Catraca "
+            "SET id_catraca = %s, id_linha = %s, preco_tarifa = %s "
+            "WHERE id_catraca = %s"
+        ),
+        'select': (
+            "SELECT * FROM Catraca "
+            "WHERE id_catraca = %s"
+        )
+    }
+
     # todo: utilizar
     check_empty_table = (
         "SELECT COUNT(1)"
