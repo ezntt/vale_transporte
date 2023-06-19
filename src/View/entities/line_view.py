@@ -39,7 +39,9 @@ class LineMenu:
 
     # todo
     def request_delete_data(self):
-        pass
+        line_id = input("Digite o ID da linha: ")
+        data = []
+        return data.append(line_id)
 
     # todo
     def request_view_data(self):
@@ -47,4 +49,26 @@ class LineMenu:
 
     # todo
     def request_update_data(self):
-        pass
+
+        data = []
+
+        # todo: verificar se a linha existe, caso exista, informe e solicite o ID denovo
+        line_id = int(input("Digite o ID da linha: "))
+
+        name = input("Digite o nome da linha: ")
+
+        first_hour = self.validations.validate_input(
+                f"Digite o primeiro horário de atividade da linha {line_id} (hh:mm): ",
+                self.validations.validate_time,
+                "Horário inválido. Deve seguir o padrão (hh:mm)"
+            )
+
+        last_hour = self.validations.validate_input(
+                f"Digite o último horário de atividade da linha {line_id} (hh:mm): ",
+                self.validations.validate_time,
+                "Horário inválido. Deve seguir o padrão (hh:mm)"
+            )
+
+        data.append((line_id, name, first_hour, last_hour))
+
+        return data

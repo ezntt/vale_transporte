@@ -35,7 +35,7 @@ class SQLCrud:
         ),
         'update': (
             "UPDATE Usuario "
-            "SET nome = %s, data_nascimento = %s, cpf = %s, email = %s, telefone = %s, bairro = %s "
+            "SET id_linha = %s,  nome = %s, data_nascimento = %s, cpf = %s, email = %s, telefone = %s, bairro = %s "
             "WHERE id_usuario = %s"
         ),
         'select': (
@@ -83,6 +83,48 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Cartao "
             "WHERE id_cartao = %s"
+        )
+    }
+
+    gate = {
+        'insert': (
+            "INSERT INTO Catraca "
+            "(id_linha, preco_tarifa) "
+            "VALUES (%s, %s)"
+        ),
+        'delete': (
+            "DELETE FROM Catraca "
+            "WHERE id_catraca = %s"
+        ),
+        'update': (
+            "UPDATE Catraca "
+            "SET id_catraca = %s, id_linha = %s, preco_tarifa = %s "
+            "WHERE id_catraca = %s"
+        ),
+        'select': (
+            "SELECT * FROM Catraca "
+            "WHERE id_catraca = %s"
+        )
+    }
+
+    recharge = {
+        'insert': (
+            "INSERT INTO Pedido_recarga "
+            "(id_cartao, id_funcionario, valor, data) "
+            "VALUES (%s, %s, %s, %s)"
+        ),
+        'delete': (
+            "DELETE FROM Pedido_recarga "
+            "WHERE id_pedido = %s"
+        ),
+        'update': (
+            "UPDATE Pedido_recarga "
+            "SET id_cartao = %s, id_funcionario = %s, valor = %s, data = %s "
+            "WHERE id_pedido = %s"
+        ),
+        'select': (
+            "SELECT * FROM Pedido_recarga "
+            "WHERE id_pedido = %s"
         )
     }
 
