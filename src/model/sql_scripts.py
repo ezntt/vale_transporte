@@ -35,7 +35,7 @@ class SQLScripts:
         ),
         'update': (
             "UPDATE Usuario "
-            "SET nome = %s, data_nascimento = %s, cpf = %s, email = %s, telefone = %s, bairro = %s "
+            "SET id_linha = %s,  nome = %s, data_nascimento = %s, cpf = %s, email = %s, telefone = %s, bairro = %s "
             "WHERE id_usuario = %s"
         ),
         'select': (

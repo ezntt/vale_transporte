@@ -1,5 +1,5 @@
-from src.controller.main_controller import MainController
-from src.view.line_view import LineMenu
+from src.Controller.main_controller import MainController
+from src.View.line_view import LineMenu
 
 
 class LineController(MainController):

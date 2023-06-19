@@ -1,5 +1,5 @@
-from src.controller.main_controller import MainController
-from src.view.employee_view import EmployeeMenu
+from src.Controller.main_controller import MainController
+from src.View.employee_view import EmployeeMenu
 
 
 class EmployeeController(MainController):
@@ -15,7 +15,13 @@ class EmployeeController(MainController):
         )
 
     def delete_employee(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.employee['delete'],
+            self.employee_menu.request_delete_data()
+        )
 
     def update_employee(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.employee['update'],
+            self.employee_menu.request_update_data()
+        )

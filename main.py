@@ -1,4 +1,4 @@
-from src.controller.main_controller import MainController
+from src.Controller.main_controller import MainController
 
 controller = MainController()
 

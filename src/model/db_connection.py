@@ -6,7 +6,7 @@ class DBConnection:
         self.host = "localhost"
         self.database = "vale_transporte"
         self.user = "root"
-        self.password = "password"  # agora só precisa alterar aqui a senha
+        self.password = "root"  # agora só precisa alterar aqui a senha
         self.conn = None
         self.cursor = None
 

@@ -1,6 +1,6 @@
 from src.model.db_connection import DBConnection
 from src.model.sql_scripts import SQLScripts
-from src.view.messages_view import ViewMessages
+from src.View.messages_view import ViewMessages
 
 
 class MainController:
@@ -13,6 +13,6 @@ class MainController:
         self.message = ViewMessages()
 
     def start(self):
-        from src.view.menu_view import MenuView  # importei aqui para evitar circular import!
+        from src.View.menu_view import MenuView  # importei aqui para evitar circular import!
         menu = MenuView()
         menu.show_menu()

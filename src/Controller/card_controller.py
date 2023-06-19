@@ -1,5 +1,5 @@
-from src.controller.main_controller import MainController
-from src.view.card_view import CardMenu
+from src.Controller.main_controller import MainController
+from src.View.card_view import CardMenu
 
 
 class CardController(MainController):
@@ -15,7 +15,14 @@ class CardController(MainController):
         )
 
     def delete_card(self):
-        pass
+
+        self.db.executemany_query(
+            self.sql_scripts.card['delete'],
+            self.card_menu.request_delete_data()
+        )
 
     def update_card(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.card['update'],
+            self.card_menu.request_update_data()
+        )

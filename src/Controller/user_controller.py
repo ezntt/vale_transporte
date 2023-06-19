@@ -1,5 +1,5 @@
-from src.controller.main_controller import MainController
-from src.view.user_view import UserMenu
+from src.Controller.main_controller import MainController
+from src.View.user_view import UserMenu
 
 
 class UserController(MainController):
@@ -15,7 +15,13 @@ class UserController(MainController):
         )
 
     def delete_user(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.user['delete'],
+            self.user_menu.request_delete_data()
+        )
 
     def update_user(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.user['update'],
+            self.user_menu.request_update_data()
+        )

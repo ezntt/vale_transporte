@@ -1,4 +1,4 @@
-from src.view.validations_view import ValidationsView
+from src.View.validations_view import ValidationsView
 
 
 class LineMenu:
