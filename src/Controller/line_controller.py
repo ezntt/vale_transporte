@@ -15,7 +15,13 @@ class LineController(MainController):
         )
 
     def delete_line(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.line['delete'],
+            self.line_menu.request_delete_data()
+        )
 
     def update_line(self):
-        pass
+        self.db.executemany_query(
+            self.sql_scripts.line['update'],
+            self.line_menu.request_update_data()
+        )
