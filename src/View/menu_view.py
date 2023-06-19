@@ -1,130 +1,86 @@
-from src.controller.controller_crud import ControllerCrud
+from src.controller.card_controller import CardController
+from src.controller.employee_controller import EmployeeController
+from src.controller.line_controller import LineController
+from src.controller.main_controller import MainController
+from src.controller.user_controller import UserController
 
 
 class MenuView:
 
-    controller_crud = ControllerCrud()
+    def __init__(self):
+        self.main_controller = MainController()
+        self.user_controller = UserController()
+        self.employee_controller = EmployeeController()
+        self.line_controller = LineController()
+        self.card_controller = CardController()
 
-    def show_title(self, title):
+    def show_menu_options(self, title, options, is_main_menu=False):
+        
         print("\n")
-        print("="*20)
+        print("=" * 20)
         print(f"{title.upper()}\n")
 
-    def show_menu(self):
-        self.show_title('menu principal')
         while True:
             print("Escolha uma opção:")
-            print("1 - Menu do Funcionário")
-            print("2 - Menu do Usuário")
-            print("3 - Menu do Cartão")
-            print("0 - Sair")
+            for i, option in enumerate(options):
+                print(f"{i + 1} - {option[0]}")
+            print("0 - Sair" if is_main_menu else "0 - Voltar")
 
-            option = input("Opção: ")
+            selected_option = input("Opção: ")
 
-            match option:
-                case "1":
-                    self.show_menu_crud_employee()
-                case "2":
-                    self.show_menu_crud_user()
-                case "3":
-                    self.show_menu_crud_card()
-                case "0":
+            if selected_option == "0":
+                if is_main_menu:
+                    self.main_controller.db.disconnect()
                     exit()
-                case _:
-                    print("Opção inválida. Tente novamente.")
+                else:
+                    break
+
+            try:
+                selected_option_index = int(selected_option) - 1
+                selected_option_func = options[selected_option_index][1]
+                selected_option_func()
+            except (ValueError, IndexError):
+                print("Opção inválida. Tente novamente.")
+
+    def show_menu(self):
+        options = [
+            ["Menu do Funcionário", self.show_menu_crud_employee],
+            ["Menu do Usuário", self.show_menu_crud_user],
+            ["Menu do Cartão", self.show_menu_crud_card],
+            ["Menu teste", self.show_menu_crud_lines]
+        ]
+        self.show_menu_options('menu principal', options, is_main_menu=True)
 
     def show_menu_crud_user(self):
-        self.show_title('menu do usuário')
-        while True:
-            print("Escolha uma opção:")
-            print("1 - Adicionar usuário")
-            print("2 - Remover usuário")
-            print("3 - Alterar usuário")
-            print("0 - Voltar")
-
-            option = input("Opção: ")
-
-            match option:
-                case "1":
-                    self.controller_crud.insert_user()
-                case "2":
-                    self.controller_crud.remove_user()
-                case "3":
-                    print("Todo")
-                case "0":
-                    break
-                case _:
-                    print("Opção inválida. Tente novamente.")
+        options = [
+            ["Adicionar usuário", self.user_controller.insert_user],
+            ["Remover usuário", self.user_controller.delete_user],
+            ["Alterar usuário", self.user_controller.update_user],
+        ]
+        self.show_menu_options('menu do usuário', options)
 
     def show_menu_crud_employee(self):
-        self.show_title('menu do funcionário')
-        while True:
-            print("Escolha uma opção:")
-            print("1 - Adicionar funcionário\n"
-                  "2 - Acessar menu de linhas de ônibus\n"
-                  "3 - Alterar funcionário\n"
-                  "4 - Remover funcionário\n"
-                  "0 - Voltar para o menu principal")
-
-            option = input("Opção: ")
-
-            match option:
-                case "1":
-                    self.controller_crud.insert_employee()
-                case "2":
-                    self.show_menu_crud_lines()
-                case "3":
-                    print("Todo")
-                case "4":
-                    print("Todo")
-                case "0":
-                    break
-                case _:
-                    print("Opção inválida. Tente novamente.")
+        options = [
+            ["Adicionar funcionário", self.employee_controller.insert_employee],
+            ["Acessar menu de linhas de ônibus", self.show_menu_crud_lines],
+            ["Alterar funcionário", self.employee_controller.update_employee],
+            ["Remover funcionário", self.employee_controller.delete_employee],
+        ]
+        self.show_menu_options('menu do funcionário', options)
 
     def show_menu_crud_lines(self):
-        self.show_title('menu de linhas')
-        while True:
-            print("Escolha uma opção:")
-            print("1 - Adicionar linha\n"
-                  "2 - Excluir linha\n"
-                  "3 - Alterar linha\n"
-                  "0 - Voltar para o menu do funcionário")
-
-            option = input("Opção: ")
-
-            match option:
-                case "1":
-                    self.controller_crud.insert_line()
-                case "2":
-                    print("todo")
-                case "3":
-                    print("Todo")
-                case "0":
-                    break
-                case _:
-                    print("Opção inválida. Tente novamente.")
+        options = [
+            ["Adicionar linha", self.line_controller.insert_line],
+            ["Excluir linha", self.line_controller.delete_line],
+            ["Alterar linha", self.line_controller.update_line],
+        ]
+        self.show_menu_options('menu de linhas', options)
 
     def show_menu_crud_card(self):
-        self.show_title('menu do cartão')
-        while True:
-            print("Escolha uma opção:")
-            print("1 - Adicionar cartão\n"
-                  "2 - Remover cartão\n"
-                  "3 - Alterar dados de um cartão\n"
-                  "4 - Mostrar cartões disponíveis\n"
-                  "0 - Voltar para o menu principal")
+        options = [
+            ["Adicionar cartão", self.card_controller.insert_card],
+            ["Remover cartão", self.card_controller.delete_card],
+            ["Alterar dados de um cartão", self.card_controller.update_card],
+        ]
+        self.show_menu_options('menu do cartão', options)
 
-            option = input("Opção: ")
-
-            match option:
-                case "1":
-                    self.controller_crud.insert_card()
-                case "2":
-                    self.controller_crud.delete_card()
-                case "3":
-                    print("Todo")
-                case "0":
-                    break
-                case _:
-                    print("Opção inválida. Tente novamente.")

@@ -1,0 +1,6 @@
+o uso do cartao tem um id_cartao e um id_catraca
+
+o cartao tem um usuario vinculado
+a catraca tem uma linha vinculada
+
+ate onde sei, o usuario deve apenas poder usar o cartao na linha que ele cadastrou

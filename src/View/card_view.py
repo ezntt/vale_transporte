@@ -35,7 +35,6 @@ class CardMenu:
 
         return data
 
-
     # todo
     def request_delete_data(self):
         pass
