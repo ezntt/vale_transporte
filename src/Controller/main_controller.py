@@ -1,5 +1,5 @@
 from src.model.db_connection import DBConnection
-from src.model.sql_scripts import SQLScripts
+from src.model.sql_crud import SQLCrud
 from src.view.messages_view import ViewMessages
 
 
@@ -9,10 +9,9 @@ class MainController:
         self.cursor = None
         self.db = DBConnection()
         self.conn = self.db.connect()
-        self.sql_scripts = SQLScripts()
+        self.sql_crud = SQLCrud()
         self.message = ViewMessages()
 
     def start(self):
         from src.view.menu_view import MenuView  # importei aqui para evitar circular import!
-        menu = MenuView()
-        menu.show_menu()
+        MenuView().show_main_menu()

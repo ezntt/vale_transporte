@@ -4,7 +4,7 @@ from src.view.validations_view import ValidationsView
 class LineMenu:
 
     def __init__(self):
-        self.validations = ValidationsView()
+        self.validations_view = ValidationsView()
 
     def request_insert_data(self):
 
@@ -17,15 +17,15 @@ class LineMenu:
 
             name = input("Digite o nome da linha: ")
 
-            first_hour = self.validations.validate_input(
+            first_hour = self.validations_view.validate_input(
                 f"Digite o primeiro horário de atividade da linha {line_id} (hh:mm): ",
-                self.validations.validate_time,
+                self.validations_view.validate_time,
                 "Horário inválido. Deve seguir o padrão (hh:mm)"
             )
 
-            last_hour = self.validations.validate_input(
+            last_hour = self.validations_view.validate_input(
                 f"Digite o último horário de atividade da linha {line_id} (hh:mm): ",
-                self.validations.validate_time,
+                self.validations_view.validate_time,
                 "Horário inválido. Deve seguir o padrão (hh:mm)"
             )
 

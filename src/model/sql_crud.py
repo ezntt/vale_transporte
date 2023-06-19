@@ -1,4 +1,4 @@
-class SQLScripts:
+class SQLCrud:
     def __init__(self):
         pass
 
@@ -87,8 +87,5 @@ class SQLScripts:
     }
 
     # todo: utilizar
-    check_empty_table = (
-        "SELECT COUNT(1)"
-        "WHERE EXISTS (SELECT * FROM %s)"
-    )
+
 

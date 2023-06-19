@@ -30,7 +30,10 @@ class DBConnection:
         self.cursor.executemany(query, data)
         self.conn.commit()
 
-    def execute_query(self, query):
+    def execute_query(self, query, params=None):
         self.cursor = self.conn.cursor()
-        self.cursor.execute(query)
+        if params is None:
+            self.cursor.execute(query)
+        else:
+            self.cursor.execute(query, params)
         self.conn.commit()
