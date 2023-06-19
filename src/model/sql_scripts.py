@@ -107,6 +107,27 @@ class SQLScripts:
         )
     }
 
+    recharge = {
+        'insert': (
+            "INSERT INTO Pedido_recarga "
+            "(id_cartao, id_funcionario, valor, data) "
+            "VALUES (%s, %s, %s, %s)"
+        ),
+        'delete': (
+            "DELETE FROM Pedido_recarga "
+            "WHERE id_pedido = %s"
+        ),
+        'update': (
+            "UPDATE Pedido_recarga "
+            "SET id_cartao = %s, id_funcionario = %s, valor = %s, data = %s "
+            "WHERE id_pedido = %s"
+        ),
+        'select': (
+            "SELECT * FROM Pedido_recarga "
+            "WHERE id_pedido = %s"
+        )
+    }
+
     # todo: utilizar
     check_empty_table = (
         "SELECT COUNT(1)"

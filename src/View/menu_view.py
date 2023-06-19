@@ -1,7 +1,9 @@
 from src.Controller.card_controller import CardController
 from src.Controller.employee_controller import EmployeeController
+from src.Controller.gate_controller import GateController
 from src.Controller.line_controller import LineController
 from src.Controller.main_controller import MainController
+from src.Controller.recharge_controller import RechargeController
 from src.Controller.user_controller import UserController
 
 
@@ -13,6 +15,8 @@ class MenuView:
         self.employee_controller = EmployeeController()
         self.line_controller = LineController()
         self.card_controller = CardController()
+        self.gate_controller = GateController()
+        self.recharge_controller = RechargeController()
 
     def show_menu_options(self, title, options, is_main_menu=False):
         
@@ -47,6 +51,7 @@ class MenuView:
             ["Menu do Funcionário", self.show_menu_crud_employee],
             ["Menu do Usuário", self.show_menu_crud_user],
             ["Menu do Cartão", self.show_menu_crud_card],
+            ["Menu da Catraca", self.show_menu_crud_gate],
             ["Menu teste", self.show_menu_crud_lines]
         ]
         self.show_menu_options('menu principal', options, is_main_menu=True)
@@ -63,6 +68,7 @@ class MenuView:
         options = [
             ["Adicionar funcionário", self.employee_controller.insert_employee],
             ["Acessar menu de linhas de ônibus", self.show_menu_crud_lines],
+            ["Acessar o Menu da Recarga", self.show_menu_crud_recharge()],
             ["Alterar funcionário", self.employee_controller.update_employee],
             ["Remover funcionário", self.employee_controller.delete_employee],
         ]
@@ -84,3 +90,18 @@ class MenuView:
         ]
         self.show_menu_options('menu do cartão', options)
 
+    def show_menu_crud_gate(self):
+        options = [
+            ["Adicionar Catraca", self.gate_controller.insert_gate],
+            ["Remover Catraca", self.gate_controller.delete_gate],
+            ["Alterar Catraca", self.gate_controller.update_gate],
+        ]
+        self.show_menu_options('menu da Catraca', options)
+
+    def show_menu_crud_recharge(self):
+        options = [
+            ["Adicionar Recarga", self.recharge_controller.insert_recharge()],
+            ["Remover Recarga", self.recharge_controller.delete_recharge()],
+            ["Alterar Recarga", self.recharge_controller.update_recharge()],
+        ]
+        self.show_menu_options('menu das Recargas', options)

@@ -8,19 +8,19 @@ class GateController(MainController):
         super().__init__()
         self.gate_menu = GateMenu()
 
-    def insert_line(self):
+    def insert_gate(self):
         self.db.executemany_query(
             self.sql_scripts.gate['insert'],
             self.gate_menu.request_insert_data()
         )
 
-    def delete_line(self):
+    def delete_gate(self):
         self.db.executemany_query(
             self.sql_scripts.gate['delete'],
             self.gate_menu.request_delete_data()
         )
 
-    def update_line(self):
+    def update_gate(self):
         self.db.executemany_query(
             self.sql_scripts.gate['update'],
             self.gate_menu.request_update_data()
