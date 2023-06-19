@@ -1,5 +1,5 @@
 from src.controller.main_controller import MainController
-from src.view.card_view import CardMenu
+from src.view.entities.card_view import CardMenu
 
 
 class CardController(MainController):
@@ -10,7 +10,7 @@ class CardController(MainController):
 
     def insert_card(self):
         self.db.executemany_query(
-            self.sql_scripts.card['insert'],
+            self.sql_crud.card['insert'],
             self.card_menu.request_insert_data()
         )
 

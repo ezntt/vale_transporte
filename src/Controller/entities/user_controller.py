@@ -1,5 +1,5 @@
 from src.controller.main_controller import MainController
-from src.view.user_view import UserMenu
+from src.view.entities.user_view import UserMenu
 
 
 class UserController(MainController):
@@ -10,7 +10,7 @@ class UserController(MainController):
 
     def insert_user(self):
         self.db.executemany_query(
-            self.sql_scripts.user['insert'],
+            self.sql_crud.user['insert'],
             self.user_menu.request_insert_data()
         )
 

@@ -1,8 +1,8 @@
-from src.controller.card_controller import CardController
-from src.controller.employee_controller import EmployeeController
-from src.controller.line_controller import LineController
 from src.controller.main_controller import MainController
-from src.controller.user_controller import UserController
+from src.controller.entities.card_controller import CardController
+from src.controller.entities.employee_controller import EmployeeController
+from src.controller.entities.line_controller import LineController
+from src.controller.entities.user_controller import UserController
 
 
 class MenuView:
@@ -37,17 +37,16 @@ class MenuView:
 
             try:
                 selected_option_index = int(selected_option) - 1
-                selected_option_func = options[selected_option_index][1]
-                selected_option_func()
+                selected_option_function = options[selected_option_index][1]
+                selected_option_function()
             except (ValueError, IndexError):
                 print("Opção inválida. Tente novamente.")
 
-    def show_menu(self):
+    def show_main_menu(self):
         options = [
             ["Menu do Funcionário", self.show_menu_crud_employee],
             ["Menu do Usuário", self.show_menu_crud_user],
             ["Menu do Cartão", self.show_menu_crud_card],
-            ["Menu teste", self.show_menu_crud_lines]
         ]
         self.show_menu_options('menu principal', options, is_main_menu=True)
 

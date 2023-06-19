@@ -1,5 +1,5 @@
 from src.controller.main_controller import MainController
-from src.view.line_view import LineMenu
+from src.view.entities.line_view import LineMenu
 
 
 class LineController(MainController):
@@ -10,7 +10,7 @@ class LineController(MainController):
 
     def insert_line(self):
         self.db.executemany_query(
-            self.sql_scripts.line['insert'],
+            self.sql_crud.line['insert'],
             self.line_menu.request_insert_data()
         )
 
