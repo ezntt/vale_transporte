@@ -1,5 +1,5 @@
-from src.controller.controller import Controller
+from src.controller.main_controller import MainController
 
-controller = Controller()
+controller = MainController()
 
 controller.start()

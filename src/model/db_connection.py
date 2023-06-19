@@ -8,6 +8,7 @@ class DBConnection:
         self.user = "root"
         self.password = "password"  # agora só precisa alterar aqui a senha
         self.conn = None
+        self.cursor = None
 
     def connect(self):
         try:
@@ -23,3 +24,13 @@ class DBConnection:
         if self.conn is not None:
             self.conn.close()
             print("Conexão fechada.")
+
+    def executemany_query(self, query, data):
+        self.cursor = self.conn.cursor()
+        self.cursor.executemany(query, data)
+        self.conn.commit()
+
+    def execute_query(self, query):
+        self.cursor = self.conn.cursor()
+        self.cursor.execute(query)
+        self.conn.commit()
