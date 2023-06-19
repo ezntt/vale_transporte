@@ -31,17 +31,14 @@ class RechargeMenu:
 
         return data
 
-    # todo
     def request_delete_data(self):
-        recharge_id = input("Digite o ID da recarga: ")
-        data = []
-        return data.append(recharge_id)
+        recharge_id = input("Digite o ID da Recarga que deseja remover: ")
 
-    # todo
-    def request_view_data(self):
+        return (recharge_id,)
+
+    def list_data(self):
         pass
 
-    # todo
     def request_update_data(self):
 
         data = []

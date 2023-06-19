@@ -6,7 +6,7 @@ class DBConnection:
         self.host = "localhost"
         self.database = "vale_transporte"
         self.user = "root"
-        self.password = "root"  # agora só precisa alterar aqui a senha
+        self.password = "password"  # agora só precisa alterar aqui a senha
         self.conn = None
         self.cursor = None
 
@@ -25,6 +25,10 @@ class DBConnection:
             self.conn.close()
             print("Conexão fechada.")
 
+    def restart(self):
+        self.disconnect()
+        self.connect()
+
     def executemany_query(self, query, data):
         self.cursor = self.conn.cursor()
         self.cursor.executemany(query, data)
@@ -37,3 +41,11 @@ class DBConnection:
         else:
             self.cursor.execute(query, params)
         self.conn.commit()
+
+    def execute_query_no_params(self, query):
+        self.cursor = self.conn.cursor()
+        self.cursor.execute(query)
+        result = self.cursor.fetchall()
+        self.cursor.close()
+        self.conn.commit()
+        return result

@@ -37,17 +37,14 @@ class LineMenu:
 
         return data
 
-    # todo
     def request_delete_data(self):
-        line_id = input("Digite o ID da linha: ")
-        data = []
-        return data.append(line_id)
+        line_id = input("Digite o ID da Linha que deseja remover: ")
 
-    # todo
-    def request_view_data(self):
+        return (line_id,)
+
+    def list_data(self):
         pass
 
-    # todo
     def request_update_data(self):
 
         data = []
@@ -57,15 +54,15 @@ class LineMenu:
 
         name = input("Digite o nome da linha: ")
 
-        first_hour = self.validations.validate_input(
+        first_hour = self.validations_view.validate_input(
                 f"Digite o primeiro horário de atividade da linha {line_id} (hh:mm): ",
-                self.validations.validate_time,
+                self.validations_view.validate_time,
                 "Horário inválido. Deve seguir o padrão (hh:mm)"
             )
 
-        last_hour = self.validations.validate_input(
+        last_hour = self.validations_view.validate_input(
                 f"Digite o último horário de atividade da linha {line_id} (hh:mm): ",
-                self.validations.validate_time,
+                self.validations_view.validate_time,
                 "Horário inválido. Deve seguir o padrão (hh:mm)"
             )
 

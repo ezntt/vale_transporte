@@ -29,17 +29,14 @@ class GateMenu:
 
         return data
 
-    # todo
     def request_delete_data(self):
-        gate_id = input("Digite o ID da catraca: ")
-        data = []
-        return data.append(gate_id)
+        gate_id = input("Digite o ID do catraca que deseja remover: ")
+        return (gate_id,)
 
     # todo
-    def request_view_data(self):
+    def list_data(self):
         pass
 
-    # todo
     def request_update_data(self):
         data = []
         gate_id = int(input("Digite o ID da catraca: "))

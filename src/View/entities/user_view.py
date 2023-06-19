@@ -20,15 +20,8 @@ class UserMenu:
             surname = input("Digite o sobrenome do usuário")
             full_name = f"{name} {surname}"
 
-            while True:
-                # todo: verificar se a linha existe, caso não exista, informe e solicite o ID denovo
-                line_id = int(input("Digite o ID da linha: "))
-
-                if self.validations_controller.validate_line_id(line_id):
-                    print("linha existe")
-                    break
-                else:
-                    print("linha não existe")
+            # todo: verificar se a linha existe, caso não exista, informe e solicite o ID denovo
+            line_id = int(input("Digite o ID da linha: "))
 
             day_of_birth = self.validations_view.validate_input(
                 f"Digite o dia de nascimento do usuário {name}: ",
@@ -71,17 +64,14 @@ class UserMenu:
 
         return data
 
-    # todo
     def request_delete_data(self):
-        user_id = input("Digite o Id Do Usuario que deseja remover: ")
-        data = []
-        return data.append(user_id)
+        user_id = input("Digite o ID da Usuario que deseja remover: ")
 
-    # todo
-    def request_view_data(self):
+        return (user_id,)
+
+    def list_data(self):
         pass
 
-    # todo
     def request_update_data(self):
         data = []
 

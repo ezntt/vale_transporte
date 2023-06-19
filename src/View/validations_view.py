@@ -1,17 +1,26 @@
 import datetime
 import re
 
+from src.view.messages_view import ViewMessages
+
 
 class ValidationsView:
+
+    def __init__(self):
+        self.view_messages = ViewMessages()
+
     def validate_input(self, input_message, validation, error_message, is_int=False):
         while True:
             try:
                 user_input = int(input(input_message)) if is_int else input(input_message)
-                if validation(user_input):
-                    raise ValueError(error_message)
+                if user_input is None or user_input == '':
+                    user_input = None
+                else:
+                    if validation(user_input):
+                        raise ValueError(error_message)
                 return user_input
             except ValueError as err:
-                print("Erro:", err)
+                self.view_messages.print_data(f"Erro: {err}")
 
     def validate_year_of_birth(self, year):
         current_year = datetime.date.today().year

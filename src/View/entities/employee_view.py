@@ -56,23 +56,17 @@ class EmployeeMenu:
 
             return data
 
-    # todo
     def request_delete_data(self):
-        employee_id = input("Digite o Id Do Funcionario que deseja remover: ")
-        data = []
-        return data.append(employee_id)
+        employee_id = input("Digite o ID do funcionário que deseja remover: ")
 
-    # todo
-    def request_view_data(self):
-        pass
+        return (employee_id,)
 
-    # todo
     def request_update_data(self):
 
         data = []
 
         while True:
-            employee_id = input("Digite o Id Do Funcionario que deseja alterar: ")
+            employee_id = input("Digite o ID do funcionário que deseja alterar: ")
             name = input("Digite o primeiro nome do funcionário: ")
             surname = input("Digite o sobrenome do funcionário: ")
             full_name = f"{name} {surname}"

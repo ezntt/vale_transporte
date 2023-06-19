@@ -18,26 +18,26 @@
 	- ~~DML de Pedido_Recarga~~
 
 - Elaboração e apresentação de 3 (três) consultas que sumarizem as informações do banco de dados envolvendo mais de duas tabelas. (1,0 pontos)
-	- Cada consulta deve projetar pelo menos duas colunas.
+	- ~~Cada consulta deve projetar pelo menos duas colunas.~~
 
 	- Duas das consultas devem ter uma das colunas com uma função de agregação.
 
-	- A última consulta deve utilizar um Left ou Right Join.
+	- ~~A última consulta deve utilizar um Left ou Right Join.~~
 
 	- Deve-se, ainda, prover uma descrição do objetivo de cada consulta, assim como uma pequena amostra do resultado,
 		 ou seja, um conjunto de linhas recuperadas a partir da consulta;
 		 
 - Desenvolvimento de uma aplicação que (4,0 pontos):
 
-	- ~~Se conecte a um Banco de Dados (PostgreSQL ou MySQL) (0,5 ponto);~~
+	- ~~Se conecte a um Banco de Dados (PostgreSQL ou MySQL)~~ (0,5 ponto);
 	
-	- Faça inserções, atualizações e exclusões no Banco de Dados (2,5 pontos).
+	- ~~Faça inserções, atualizações e exclusões no Banco de Dados~~ (2,5 pontos).
 
-		- Devem existir funcionalidades para cada uma destas operações em cada tabela do modelo considerando as dependências entre as mesmas.
+		- ~~Devem existir funcionalidades para cada uma destas operações em cada tabela do modelo considerando as dependências entre as mesmas.~~
 
-		- Deve ainda existir um módulo principal que permita demonstrar todas as operações, possibilitando que um banco de dados inicialmente vazio,
-		   seja carregado e atualizado utilizando inserts, deletes e updates.
+		- ~~Deve ainda existir um módulo principal que permita demonstrar todas as operações, possibilitando que um banco de dados inicialmente vazio,
+		   seja carregado e atualizado utilizando inserts, deletes e updates.~~
 
 	- Elabore as consultas definidas no item 7 (1,0 ponto).
 
-		- Deve existir uma forma de realizar cada consulta que irá apresentar como retorno o resultado do SQL executado no Banco de Dados.
+		- ~~Deve existir uma forma de realizar cada consulta que irá apresentar como retorno o resultado do SQL executado no Banco de Dados.~~

@@ -10,7 +10,7 @@ class MainController:
         self.db = DBConnection()
         self.conn = self.db.connect()
         self.sql_crud = SQLCrud()
-        self.message = ViewMessages()
+        self.view_messages = ViewMessages()
 
     def start(self):
         from src.view.menu_view import MenuView  # importei aqui para evitar circular import!

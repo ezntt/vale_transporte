@@ -20,6 +20,9 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Funcionario "
             "WHERE id_funcionario = %s"
+        ),
+        'list': (
+            "SELECT id_funcionario, nome FROM funcionario"
         )
     }
 
@@ -41,6 +44,9 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Usuario "
             "WHERE id_usuario = %s"
+        ),
+        'list': (
+            "SELECT id_usuario, nome FROM Usuario"
         )
     }
 
@@ -62,6 +68,9 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Linha "
             "WHERE id_linha = %s"
+        ),
+        'list': (
+            "SELECT id_linha, nome, primeiro_horario, ultimo_horario FROM Linha"
         )
     }
 
@@ -83,6 +92,12 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Cartao "
             "WHERE id_cartao = %s"
+        ),
+        'list': (
+            "SELECT c.id_cartao, c.saldo, u.nome "
+            "FROM Cartao c "
+            "LEFT JOIN Usuario u "  # mostra cartões sem usuário vinculado com o left join
+            "ON u.id_usuario = c.id_usuario"
         )
     }
 
@@ -104,6 +119,9 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Catraca "
             "WHERE id_catraca = %s"
+        ),
+        'list': (
+            "SELECT id_catraca, preco_tarifa FROM catraca"
         )
     }
 
@@ -125,9 +143,32 @@ class SQLCrud:
         'select': (
             "SELECT * FROM Pedido_recarga "
             "WHERE id_pedido = %s"
+        ),
+        'list': (
+            "SELECT id_pedido, valor, data FROM pedido_recarga"
         )
     }
 
-    # todo: utilizar
-
-
+    card_use = {
+        'insert': (
+            "INSERT INTO uso_do_cartao"
+            "(id_catraca, id_cartao, data, hora) "
+            "VALUES (%s, %s, %s, %s)"
+        ),
+        'delete': (
+            "DELETE FROM uso_do_cartao "
+            "WHERE id_uso_cartao = %s"
+        ),
+        'update': (
+            "UPDATE uso_do_cartao "
+            "SET id_catraca = %s, id_cartao = %s, data = %s, hora = %s "
+            "WHERE id_uso_cartao = %s"
+        ),
+        'select': (
+            "SELECT * FROM uso_do_cartao "
+            "WHERE id_uso_cartao = %s"
+        ),
+        'list': (
+            "SELECT id_uso_cartao, data, hora FROM uso_do_cartao"
+        )
+    }
