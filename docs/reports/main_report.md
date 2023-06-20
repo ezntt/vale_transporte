@@ -75,12 +75,12 @@ O sistema apresenta algumas limitações que devem ser consideradas:
 - Essa associação é realizada pelo campo "`id_linha`" presente na tabela "`Catraca`".  
   
 ## <a name="modelagem-conceitual"></a>Modelagem conceitual  
-  
-[Inserir aqui os resultados obtidos, apresentando-os de forma clara e objetiva]
-  
+
+A modelagem conceitual a seguir contém as informações necessárias para a criação das tabelas no banco.
+![modelo_conceitual.png](..%2Fdiagrams%2Fmodelo_conceitual.png)
 ## <a name="modelagem-logica"></a>Modelagem lógica
 
-A modelagem a seguir contém as informações necessárias para a criação das tabelas no banco.
+A modelagem lógica a seguir contém as informações necessárias para a criação das tabelas no banco.
 
 ![modelo_logico.png](../diagrams/modelo_logico.png)
 ## <a name="script-ddl"></a>Script DDL (Data Definition Language)
