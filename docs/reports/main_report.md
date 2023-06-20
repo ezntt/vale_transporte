@@ -77,6 +77,7 @@ O sistema apresenta algumas limitações que devem ser consideradas:
 ## <a name="modelagem-conceitual"></a>Modelagem conceitual  
 
 A modelagem conceitual a seguir contém as informações necessárias para a criação das tabelas no banco.
+
 ![modelo_conceitual.png](..%2Fdiagrams%2Fmodelo_conceitual.png)
 ## <a name="modelagem-logica"></a>Modelagem lógica
 
