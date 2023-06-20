@@ -25,10 +25,6 @@ class DBConnection:
             self.conn.close()
             print("Conexão fechada.")
 
-    def restart(self):
-        self.disconnect()
-        self.connect()
-
     def executemany_query(self, query, data):
         self.cursor = self.conn.cursor()
         self.cursor.executemany(query, data)

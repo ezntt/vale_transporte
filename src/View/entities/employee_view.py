@@ -41,13 +41,13 @@ class EmployeeMenu:
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
             cpf = self.validations_view.validate_input(
-                f"Digite o CPF do funcionário {name}",
+                f"Digite o CPF do funcionário {name}: ",
                 self.validations_view.validate_cpf,
                 "CPF inválido, deve ter 11 caracteres."
             )
 
             salary = self.validations_view.validate_input(
-                f"Digite o salário do funcionário {name}",
+                f"Digite o salário do funcionário {name}: ",
                 self.validations_view.validate_float,
                 "Salário inválido"
             )
@@ -95,13 +95,13 @@ class EmployeeMenu:
             birthday = date(year_of_birth, month_of_birth, day_of_birth)
 
             cpf = self.validations_view.validate_input(
-                f"Digite o CPF do funcionário {name}",
+                f"Digite o CPF do funcionário {name}: ",
                 self.validations_view.validate_cpf,
                 "CPF inválido, deve ter 11 caracteres."
             )
 
             salary = self.validations_view.validate_input(
-                f"Digite o salário do funcionário {name}",
+                f"Digite o salário do funcionário {name}: ",
                 self.validations_view.validate_float,
                 "Salário inválido"
             )

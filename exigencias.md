@@ -38,6 +38,6 @@
 		- ~~Deve ainda existir um módulo principal que permita demonstrar todas as operações, possibilitando que um banco de dados inicialmente vazio,
 		   seja carregado e atualizado utilizando inserts, deletes e updates.~~
 
-	- Elabore as consultas definidas no item 7 (1,0 ponto).
+	- ~~Elabore as consultas definidas no item 7~~ (1,0 ponto).
 
 		- ~~Deve existir uma forma de realizar cada consulta que irá apresentar como retorno o resultado do SQL executado no Banco de Dados.~~

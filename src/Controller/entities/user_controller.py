@@ -26,12 +26,6 @@ class UserController(MainController):
             self.user_menu.request_update_data()
         )
 
-    def list_users(self):
-        self.db.executemany_query(
-            self.sql_crud.user['list'],
-            self.user_menu.list_data()
-        )
-
     def show_users(self):
         result = self.db.execute_query_no_params(
             self.sql_crud.user['list']

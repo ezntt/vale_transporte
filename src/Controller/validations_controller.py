@@ -23,10 +23,12 @@ class ValidationsController:
         else:
             return True
 
+    #todo
     def is_table_empty(self, table):
-        query = self.sql_validations.check_empty_table
-        self.db.execute_query(query, (table,))
-        is_empty = self.db.cursor.fetchone()
-        return is_empty
-
-    # todo: essa porra toda aqui
+        return True
+        # query = self.sql_validations.check_empty_table
+        # self.db.execute_query(query, [table])
+        # count = self.db.cursor.fetchone()[0]
+        # is_empty = (count == 0)
+        # self.db.cursor.close()
+        # return is_empty
