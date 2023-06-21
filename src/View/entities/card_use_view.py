@@ -1,5 +1,6 @@
 from src.view.validations_view import ValidationsView
-import datetime
+from datetime import datetime
+from datetime import date
 
 
 class CardUseMenu:
@@ -17,7 +18,7 @@ class CardUseMenu:
 
         date = datetime.date.today()
 
-        hour = datetime.now.strftime("%H:%M:%S")
+        hour = datetime.now().strftime("%H:%M:%S")
 
         data.append((gate_id, card_id, date, hour))
 
@@ -43,7 +44,7 @@ class CardUseMenu:
 
         date = datetime.date.today()
 
-        hour = datetime.now.strftime("%H:%M:%S")
+        hour = datetime.now().strftime("%H:%M:%S")
 
         data.append((gate_id, card_id, date, hour, recharge_id))
 
